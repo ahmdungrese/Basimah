@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مبادرة بداية محبة وخير - عن أبناء بلدة بسيمة المغتربين</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- ميتا تاغ للوصف -->
+    <meta name="description" content="مبادرة خيرية لدعم أهالي بلدة بسيمة - مساعدات إنسانية وتطوير البنية التحتية">
+</head>
+<body>
+    <!-- عداد الزيارات -->
+    <div class="visitor-counter" id="visitorCounter">
+        <i class="fas fa-users"></i>
+        عدد الزيارات: <span id="visitorCount">0</span>
+    </div>
+
+    <!-- النافبار -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/api/placeholder/400/320" alt="شعار المبادرة" class="logo-img">
+                <h1>مبادرة بداية محبة وخير</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">الرئيسية</a>
+                <a href="#about" class="nav-link">عن المبادرة</a>
+                <a href="#transparency" class="nav-link">الشفافية</a>
+                <a href="#flyers" class="nav-link">النشرات</a>
+                <a href="#team" class="nav-link">فريق العمل</a>
+                <a href="#donate" class="nav-link">تبرع الآن</a>
+                <a href="#contact" class="nav-link">اتصل بنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- الهيرو سيكشن -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="/api/placeholder/400/320" alt="شعار المبادرة">
+            </div>
+            <h1>مبادرة بداية محبة وخير</h1>
+            <p>عن أبناء بلدة بسيمة المغتربين</p>
+            <button class="btn-primary" onclick="showDonateModal()">
+                <i class="fas fa-hand-holding-heart"></i>
+                تبرع الآن
+            </button>
+        </div>
+    </section>
+
+    <!-- قسم عن المبادرة -->
+    <section class="section" id="about">
+        <h2 class="section-title">أهدافنا</h2>
+        <div class="goals-container">
+            <div class="goal-card" data-goal="humanitarian">
+                <i class="fas fa-hands-helping fa-2x"></i>
+                <h3>الدعم الإنساني العاجل</h3>
+                <p>توزيع المساعدات الغذائية والإغاثية للعائلات المحتاجة</p>
+                <button class="btn-secondary details-btn" onclick="showGoalDetails('humanitarian')">
+                    عرض التفاصيل
+                </button>
+            </div>
+
+            <div class="goal-card" data-goal="medical">
+                <i class="fas fa-hospital fa-2x"></i>
+                <h3>الرعاية الصحية الطارئة</h3>
+                <p>تقديم المساعدات المالية للحالات المرضية المستعجلة</p>
+                <button class="btn-secondary details-btn" onclick="showGoalDetails('medical')">
+                    عرض التفاصيل
+                </button>
+            </div>
+
+            <div class="goal-card" data-goal="infrastructure">
+                <i class="fas fa-building fa-2x"></i>
+                <h3>تطوير البنية التحتية</h3>
+                <p>إصلاح وتحسين الخدمات العامة</p>
+                <button class="btn-secondary details-btn" onclick="showGoalDetails('infrastructure')">
+                    عرض التفاصيل
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الشفافية -->
+    <section class="section" id="transparency">
+        <h2 class="section-title">الشفافية المالية</h2>
+        <div class="transparency-container">
+            <div class="transparency-header">
+                <h3>التقرير المالي لعام 2025</h3>
+            </div>
+            <div class="table-container" id="transparency-table"></div>
+        </div>
+    </section>
+
+    <!-- قسم النشرات -->
+    <section class="section" id="flyers">
+        <h2 class="section-title">النشرات التعريفية</h2>
+        <div class="flyers-container" id="flyers-grid">
+            <!-- سيتم ملؤه عبر JavaScript -->
+        </div>
+    </section>
+
+    <!-- قسم فريق العمل -->
+    <section class="section" id="team">
+        <h2 class="section-title">فريق العمل</h2>
+        <div class="team-container" id="team-grid">
+            <!-- سيتم ملؤه عبر JavaScript -->
+        </div>
+    </section>
+
+    <!-- قسم التبرع -->
+    <section class="section" id="donate">
+        <h2 class="section-title">تبرع الآن</h2>
+        <div class="donate-container" id="donate-grid">
+            <!-- سيتم ملؤه عبر JavaScript -->
+        </div>
+    </section>
+
+    <!-- قسم الاتصال -->
+    <section class="section" id="contact">
+        <h2 class="section-title">اتصل بنا</h2>
+        <div class="contact-container">
+            <div class="whatsapp-groups" id="whatsapp-groups-root">
+                <!-- روابط مجموعات الواتساب -->
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">الاسم</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">الرسالة</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                    إرسال
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- المودال -->
+    <div class="modal" id="donateModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="donateContent"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="goalModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="goalContent"></div>
+        </div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>عن المبادرة</h3>
+                <p>مبادرة خيرية لدعم أهالي بلدة بسيمة</p>
+            </div>
+            <div class="footer-section">
+                <h3>تواصل معنا</h3>
+                <p>هاتف: ‪+49 176 72742271‬</p>
+                <p>البريد الإلكتروني: Mohamadmalekdalati@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>تابعنا</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة © 2025 - مبادرة بداية محبة وخير</p>
+        </div>
+    </footer>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
