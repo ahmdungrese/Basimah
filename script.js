@@ -16,7 +16,7 @@ const initiativeData = {
             coordinator: 'محمد احسان دالاتي',
             phone: '‪+49 176 72742271‬',
             whatsapp: '‪+49 176 72742271‬',
-            iban: 'DE05 ......',
+            iban: 'DE05',
             paypal: 'Mohamadmalekdalati@gmail.com',
             groupLink: 'https://chat.whatsapp.com/germanygroup',
             contactPerson: {
@@ -40,7 +40,52 @@ const initiativeData = {
             whatsapp: '+32 465 64 76 30',
             groupLink: 'https://chat.whatsapp.com/belgiumgroup'
         }
-    }
+    },
+
+    teamMembers: [
+        {
+            name: "الأستاذ أحمد قاسم أبو خليل",
+            title: "خطيب مسجد عين الخضراء",
+            role: "عضو الفريق الإداري",
+            description: "أستاذ في الشريعة من كلية الدعوة والإرشاد",
+            facebook: "https://facebook.com/profile1"
+        },
+        {
+            name: "الأستاذ ايمن شعيري أبو طريف",
+            title: "مدير الجمعية الخيرية",
+            role: "مسؤول إدارة وتنسيق الأعمال",
+            description: "خبرة طويلة في العمل الخيري",
+            facebook: "https://facebook.com/profile2"
+        },
+        {
+            name: "الأستاذ بشير نصر الله أبو منذر",
+            title: "مؤسس الجمعية الخيرية",
+            role: "رئيس مجلس الإدارة",
+            description: "خريج كلية الحقوق",
+            facebook: "https://facebook.com/profile3"
+        },
+        {
+            name: "الأستاذ سالم نصر الله",
+            title: "عضو الفريق الإداري",
+            role: "مسؤول التنسيق والمتابعة",
+            description: "خريج جامعة دمشق - كلية التربية",
+            facebook: "https://facebook.com/profile4"
+        },
+        {
+            name: "الأستاذ نزار السمرة أبو أنس",
+            title: "عضو الفريق الإداري",
+            role: "مسؤول التنسيق والمتابعة",
+            description: "مسؤول المشاريع",
+            facebook: "https://facebook.com/profile5"
+        },
+        {
+            name: "الأستاذ وفيق نصر الله أبو عمر",
+            title: "عضو الفريق الإداري",
+            role: "مسؤول المشاريع والتطوير",
+            description: "مسؤول تطوير المشاريع",
+            facebook: "https://facebook.com/profile6"
+        }
+    ]
 };
 
 // تهيئة التطبيق
@@ -135,7 +180,7 @@ function showDonationModal(countryCode = 'germany') {
 
 // جدول الشفافية
 function setupTransparencyTable() {
-    const tableContainer = document.getElementById('transparency-table-root');
+    const tableContainer = document.getElementById('transparency-table');
     if (!tableContainer) return;
 
     let tableHTML = `
@@ -166,14 +211,15 @@ function setupTransparencyTable() {
 
 // قسم الأهداف
 function setupGoalsSection() {
-    const goalsContainer = document.getElementById('interactive-goals-root');
+    const goalsContainer = document.getElementById('goals-container');
     if (!goalsContainer) return;
 
     const goalsHTML = initiativeData.goals.map(goal => `
         <div class="goal-card" data-goal="${goal.id}">
             <h3>${goal.title}</h3>
             <p>${goal.details}</p>
-            <button onclick="showGoalDetails('${goal.id}')" class="details-btn">
+            <button onclick="showGoalDetails('${goal.id}')" class="details
+                        <button onclick="showGoalDetails('${goal.id}')" class="details-btn">
                 عرض التفاصيل
             </button>
         </div>
@@ -301,80 +347,12 @@ function setupNavigation() {
     });
 }
 
-// التمرير والتحريك
-function setupScrollAnimation() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                if (entry.target.classList.contains('count-up')) {
-                    startCountAnimation(entry.target);
-                }
-            }
-        });
-    }, observerOptions);
-
-    // مراقبة العناصر المتحركة
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
-    });
-    // البيانات الثابتة
-const teamMembers = [
-    {
-        name: "الأستاذ أحمد قاسم أبو خليل",
-        title: "خطيب مسجد عين الخضراء",
-        role: "عضو الفريق الإداري",
-        description: "أستاذ في الشريعة من كلية الدعوة والإرشاد",
-        facebook: "https://facebook.com/profile1"
-    },
-    {
-        name: "الأستاذ ايمن شعيري أبو طريف",
-        title: "مدير الجمعية الخيرية",
-        role: "مسؤول إدارة وتنسيق الأعمال",
-        description: "خبرة طويلة في العمل الخيري",
-        facebook: "https://facebook.com/profile2"
-    },
-    {
-        name: "الأستاذ بشير نصر الله أبو منذر",
-        title: "مؤسس الجمعية الخيرية",
-        role: "رئيس مجلس الإدارة",
-        description: "خريج كلية الحقوق",
-        facebook: "https://facebook.com/profile3"
-    },
-    {
-        name: "الأستاذ سالم نصر الله",
-        title: "عضو الفريق الإداري",
-        role: "مسؤول التنسيق والمتابعة",
-        description: "خريج جامعة دمشق - كلية التربية",
-        facebook: "https://facebook.com/profile4"
-    },
-    {
-        name: "الأستاذ نزار السمرة أبو أنس",
-        title: "عضو الفريق الإداري",
-        role: "مسؤول التنسيق والمتابعة",
-        description: "مسؤول المشاريع",
-        facebook: "https://facebook.com/profile5"
-    },
-    {
-        name: "الأستاذ وفيق نصر الله أبو عمر",
-        title: "عضو الفريق الإداري",
-        role: "مسؤول المشاريع والتطوير",
-        description: "مسؤول تطوير المشاريع",
-        facebook: "https://facebook.com/profile6"
-    }
-];
-
 // تهيئة قسم فريق العمل
-function initializeTeamSection() {
+function setupTeamSection() {
     const teamContainer = document.getElementById('team-grid');
     if (!teamContainer) return;
 
-    const teamHTML = teamMembers.map(member => `
+    const teamHTML = initiativeData.teamMembers.map(member => `
         <div class="team-card">
             <div class="team-info">
                 <h3 class="member-name">${member.name}</h3>
@@ -395,7 +373,7 @@ function initializeTeamSection() {
 }
 
 // تهيئة قسم التبرع
-function initializeDonateSection() {
+function setupDonationSection() {
     const donateContainer = document.getElementById('donate-grid');
     if (!donateContainer) return;
 
@@ -454,117 +432,13 @@ function initializeDonateSection() {
     donateContainer.innerHTML = donateHTML;
 }
 
-// تهيئة قسم النشرات
-function initializeFlyersSection() {
-    const flyersContainer = document.getElementById('flyers-grid');
-    if (!flyersContainer) return;
+//* تهيئة قسم النشرات
 
-    const flyersHTML = `
-        <div class="flyers-grid">
-            <div class="flyer-card germany">
-                <h3>النشرة التعريفية - ألمانيا 🇩🇪</h3>
-                <div class="flyer-content">
-                    <h4>معلومات التبرع</h4>
-                    <div class="bank-info">
-                        <p><strong>IBAN:</strong></p>
-                        <p class="iban" onclick="copyToClipboard('DE05 ...')">
-                            DE05 ...
-                            <span class="copy-hint">انقر للنسخ</span>
-                        </p>
-                    </div>
-                    <div class="paypal-info">
-                        <p><strong>PayPal:</strong></p>
-                        <p class="paypal" onclick="copyToClipboard('Mohamadmalekdalati@gmail.com')">
-                            Mohamadmalekdalati@gmail.com
-                            <span class="copy-hint">انقر للنسخ</span>
-                        </p>
-                    </div>
-                    <div class="contact-info">
-                        <h4>معلومات التواصل</h4>
-                        <p>المنسق: محمد احسان دالاتي</p>
-                        <p>الهاتف: ‪+49 176 72742271‬</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flyer-card austria">
-                <h3>النشرة التعريفية - النمسا 🇦🇹</h3>
-                <div class="flyer-content">
-                    <div class="contact-info">
-                        <h4>معلومات التواصل</h4>
-                        <p>المنسق: طارق انور الشعيري</p>
-                        <p>الهاتف: +43 681 20522580</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flyer-card belgium">
-                <h3>النشرة التعريفية - بلجيكا 🇧🇪</h3>
-                <div class="flyer-content">
-                    <div class="contact-info">
-                        <h4>معلومات التواصل</h4>
-                        <p>المنسق: ماجد محمد دالاتي</p>
-                        <p>الهاتف: +32 465 64 76 30</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-
-    flyersContainer.innerHTML = flyersHTML;
-}
 
 // إضافة استدعاء الدوال في تهيئة التطبيق
 document.addEventListener('DOMContentLoaded', () => {
-    initializeTeamSection();
-    initializeDonateSection();
-    initializeFlyersSection();
+    initializeApp();
+    setupTeamSection();
+    setupDonationSection();
+    setupFlyersSection();
 });
-
-// وظائف المساعدة
-function showDonationDetails(country) {
-    const countryData = {
-        germany: {
-            title: 'ألمانيا',
-            iban: 'DE05 ...',
-            paypal: 'Mohamadmalekdalati@gmail.com'
-        },
-        austria: {
-            title: 'النمسا'
-        },
-        belgium: {
-            title: 'بلجيكا'
-        }
-    };
-
-    const data = countryData[country];
-    if (!data) return;
-
-    const donateModal = document.getElementById('donateModal');
-    const content = document.getElementById('donateContent');
-
-    content.innerHTML = `
-        <h3>معلومات التبرع - ${data.title}</h3>
-        ${data.iban ? `
-            <div class="donation-detail">
-                <h4>التحويل البنكي</h4>
-                <p class="iban" onclick="copyToClipboard('${data.iban}')">
-                    ${data.iban}
-                    <span class="copy-hint">انقر للنسخ</span>
-                </p>
-            </div>
-        ` : ''}
-        ${data.paypal ? `
-            <div class="donation-detail">
-                <h4>PayPal</h4>
-                <p class="paypal" onclick="copyToClipboard('${data.paypal}')">
-                    ${data.paypal}
-                    <span class="copy-hint">انقر للنسخ</span>
-                </p>
-            </div>
-        ` : ''}
-    `;
-
-    donateModal.style.display = 'block';
-}
-}

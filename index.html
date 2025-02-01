@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مبادرة بداية محبة وخير - عن أبناء بلدة بسيمة المغتربين</title>
+    <title>مبادرة بداية محبة وخير - دعم أهالي بلدة بسيمة</title>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- ميتا تاغ للوصف -->
-    <meta name="description" content="مبادرة خيرية لدعم أهالي بلدة بسيمة - مساعدات إنسانية وتطوير البنية التحتية">
+    <meta name="description" content="مبادرة خيرية لدعم أهالي بلدة بسيمة - مساعدات إنسانية، رعاية صحية، وتطوير البنية التحتية.">
 </head>
 <body>
     <!-- عداد الزيارات -->
@@ -28,16 +28,15 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="/api/placeholder/400/320" alt="شعار المبادرة" class="logo-img">
+                <img src="logo.png" alt="شعار المبادرة" class="logo-img">
                 <h1>مبادرة بداية محبة وخير</h1>
             </div>
             <div class="nav-menu">
                 <a href="#home" class="nav-link">الرئيسية</a>
                 <a href="#about" class="nav-link">عن المبادرة</a>
                 <a href="#transparency" class="nav-link">الشفافية</a>
-                <a href="#flyers" class="nav-link">النشرات</a>
-                <a href="#team" class="nav-link">فريق العمل</a>
                 <a href="#donate" class="nav-link">تبرع الآن</a>
+                <a href="#team" class="nav-link">فريق العمل</a>
                 <a href="#contact" class="nav-link">اتصل بنا</a>
             </div>
         </div>
@@ -47,92 +46,202 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-logo">
-                <img src="/api/placeholder/400/320" alt="شعار المبادرة">
+                <img src="logo.png" alt="شعار المبادرة">
             </div>
-            <h1>مبادرة بداية محبة وخير</h1>
-            <p>عن أبناء بلدة بسيمة المغتربين</p>
+            <h1>معاً نصنع الفرق</h1>
+            <p>
+                مبادرة "بداية محبة وخير" هي مبادرة خيرية تهدف إلى دعم أهالي بلدة بسيمة الحبيبة. نعمل معاً لتوفير المساعدات الإنسانية، الرعاية الصحية، وتحسين البنية التحتية لضيعتنا الغالية. 
+                نؤمن بأن العمل الجماعي هو الحل الأمثل لتجاوز الصعوبات وبناء مستقبل أفضل لأهلنا في بسيمة.
+            </p>
             <button class="btn-primary" onclick="showDonateModal()">
                 <i class="fas fa-hand-holding-heart"></i>
-                تبرع الآن
+                ساعدنا في تغيير حياة العائلات المحتاجة
             </button>
         </div>
     </section>
 
     <!-- قسم عن المبادرة -->
     <section class="section" id="about">
+        <h2 class="section-title">عن المبادرة</h2>
+        <p>
+            مبادرة "بداية محبة وخير" هي مبادرة خيرية أطلقها أبناء بلدة بسيمة المغتربين في أوروبا وبريطانيا وكندا ودول الخليج العربي. تهدف المبادرة إلى تقديم الدعم العاجل لأهالي بسيمة من خلال توزيع المساعدات الغذائية والإغاثية، تقديم الرعاية الصحية الطارئة، وتحسين البنية التحتية في البلدة.
+        </p>
+        <p>
+            الفكرة جاءت بعد زيارة أحد الإخوة لبلدة بسيمة ورؤية الوضع الصعب الذي يعيشه الأهالي. قررنا كمجموعة من المغتربين أن نعمل معاً لإنقاذ أهلنا من هذه الظروف الصعبة ومساعدتهم على العيش بكرامة.
+        </p>
+        <h3>أهداف المبادرة:</h3>
+        <ul>
+            <li>توزيع إعانات غذائية وإغاثية لكل المحتاجين في بلدة بسيمة.</li>
+            <li>تقديم مساعدات مالية للحالات المرضية الطارئة مثل العمليات الجراحية.</li>
+            <li>تحسين البنية التحتية من خلال إصلاح الخدمات العامة مثل الكهرباء والماء والصرف الصحي.</li>
+        </ul>
+    </section>
+    <!-- قسم عن المبادرة -->
+    <section class="section" id="about">
         <h2 class="section-title">أهدافنا</h2>
         <div class="goals-container">
             <div class="goal-card" data-goal="humanitarian">
-                <i class="fas fa-hands-helping fa-2x"></i>
+                <i class="fas fa-hands-helping fa-3x"></i>
                 <h3>الدعم الإنساني العاجل</h3>
                 <p>توزيع المساعدات الغذائية والإغاثية للعائلات المحتاجة</p>
                 <button class="btn-secondary details-btn" onclick="showGoalDetails('humanitarian')">
-                    عرض التفاصيل
+                    الذي تم انجازه
                 </button>
             </div>
 
             <div class="goal-card" data-goal="medical">
-                <i class="fas fa-hospital fa-2x"></i>
+                <i class="fas fa-hospital fa-3x"></i>
                 <h3>الرعاية الصحية الطارئة</h3>
                 <p>تقديم المساعدات المالية للحالات المرضية المستعجلة</p>
                 <button class="btn-secondary details-btn" onclick="showGoalDetails('medical')">
-                    عرض التفاصيل
+                    الذي تم انجازه
                 </button>
             </div>
 
             <div class="goal-card" data-goal="infrastructure">
-                <i class="fas fa-building fa-2x"></i>
+                <i class="fas fa-building fa-3x"></i>
                 <h3>تطوير البنية التحتية</h3>
                 <p>إصلاح وتحسين الخدمات العامة</p>
                 <button class="btn-secondary details-btn" onclick="showGoalDetails('infrastructure')">
-                    عرض التفاصيل
+                    الذي تم انجازه
                 </button>
             </div>
         </div>
     </section>
 
+
+
     <!-- قسم الشفافية -->
     <section class="section" id="transparency">
         <h2 class="section-title">الشفافية المالية</h2>
+        <p>
+            نحرص في مبادرة "بداية محبة وخير" على الشفافية الكاملة في جميع المعاملات المالية. يتم توثيق كل التبرعات والمصروفات بشكل دقيق، وسيتم نشر تقارير مالية شهرية لعام 2025 لضمان الثقة بين جميع المشاركين.
+        </p>
         <div class="transparency-container">
-            <div class="transparency-header">
-                <h3>التقرير المالي لعام 2025</h3>
-            </div>
+            <h3>التقرير المالي لعام 2025</h3>
             <div class="table-container" id="transparency-table"></div>
-        </div>
-    </section>
-
-    <!-- قسم النشرات -->
-    <section class="section" id="flyers">
-        <h2 class="section-title">النشرات التعريفية</h2>
-        <div class="flyers-container" id="flyers-grid">
-            <!-- سيتم ملؤه عبر JavaScript -->
-        </div>
-    </section>
-
-    <!-- قسم فريق العمل -->
-    <section class="section" id="team">
-        <h2 class="section-title">فريق العمل</h2>
-        <div class="team-container" id="team-grid">
-            <!-- سيتم ملؤه عبر JavaScript -->
         </div>
     </section>
 
     <!-- قسم التبرع -->
     <section class="section" id="donate">
         <h2 class="section-title">تبرع الآن</h2>
-        <div class="donate-container" id="donate-grid">
-            <!-- سيتم ملؤه عبر JavaScript -->
+        <p>
+            يمكنك التبرع الآن لدعم مبادرة "بداية محبة وخير" من خلال التحويل البنكي أو PayPal. كل تبرع يساعدنا في تغيير حياة العائلات المحتاجة في بلدة بسيمة.
+        </p>
+        <div class="donate-container">
+            <!-- ألمانيا -->
+            <div class="donate-card">
+                <h3>ألمانيا 🇩🇪</h3>
+                <p><strong>المنسق:</strong> محمد احسان دالاتي</p>
+                <p><strong>الهاتف:</strong> ‪+49 176 72742271‬</p>
+                <p><strong>IBAN:</strong> DE05....</p>
+                <p><strong>PayPal:</strong> Mohamadmalekdalati@gmail.com</p>
+                <button class="btn-primary" onclick="showDonationModal('germany')">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    تبرع الآن
+                </button>
+            </div>
+
+            <!-- النمسا -->
+            <div class="donate-card">
+                <h3>النمسا 🇦🇹</h3>
+                <p><strong>المنسق:</strong> طارق انور الشعيري</p>
+                <p><strong>الهاتف:</strong> +43 681 20522580</p>
+                <button class="btn-primary" onclick="showDonationModal('austria')">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    تبرع الآن
+                </button>
+            </div>
+
+            <!-- بلجيكا -->
+            <div class="donate-card">
+                <h3>بلجيكا 🇧🇪</h3>
+                <p><strong>المنسق:</strong> ماجد محمد دالاتي</p>
+                <p><strong>الهاتف:</strong> +32 465 64 76 30</p>
+                <button class="btn-primary" onclick="showDonationModal('belgium')">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    تبرع الآن
+                </button>
+            </div>
+
+            <!-- بريطانيا -->
+            <div class="donate-card">
+                <h3>بريطانيا 🇬🇧</h3>
+                <p><strong>المنسق:</strong> الأخت الدكتورة حُسن علي عويضة</p>
+                <p><strong>الهاتف:</strong> (سيتم توفير الرقم قريباً)</p>
+                <button class="btn-primary" onclick="showDonationModal('uk')">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    تبرع الآن
+                </button>
+            </div>
+
+            <!-- كندا -->
+            <div class="donate-card">
+                <h3>كندا 🇨🇦</h3>
+                <p><strong>المنسق:</strong> (سيتم توفير المعلومات قريباً)</p>
+                <p><strong>الهاتف:</strong> (سيتم توفير الرقم قريباً)</p>
+                <button class="btn-primary" onclick="showDonationModal('canada')">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    تبرع الآن
+                </button>
+            </div>
+
+            <!-- دول الخليج -->
+            <div class="donate-card">
+                <h3>دول الخليج 🇦🇪</h3>
+                <p><strong>المنسق:</strong> (جاري العمل على جمع المعلومات)</p>
+                <p><strong>الهاتف:</strong> (سيتم توفير الرقم قريباً)</p>
+                <button class="btn-primary" onclick="showDonationModal('gulf')">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    تبرع الآن
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم فريق العمل -->
+    <section class="section" id="team">
+        <h2 class="section-title">فريق العمل</h2>
+        <div class="team-container">
+            <div class="team-card">
+                <h3>الحاج بشير نصرالله ابو منذر</h3>
+                <p>رئيس مجلس الإدارة</p>
+                <p>خريج كلية الحقوق</p>
+            </div>
+            <div class="team-card">
+                <h3>الحاج ايمن الشعيري ابو طريف</h3>
+                <p>مدير الجمعية الخيرية</p>
+                <p>خبرة طويلة في العمل الخيري</p>
+            </div>
+            <div class="team-card">
+                <h3>الأستاذ سالم نصرالله ابو محمد</h3>
+                <p>مسؤول التنسيق والمتابعة</p>
+                <p>خريج جامعة دمشق - كلية التربية</p>
+            </div>
+            <div class="team-card">
+                <h3>الأستاذ أحمد قاسم ابو خليل</h3>
+                <p>عضو الفريق الإداري</p>
+                <p>أستاذ في الشريعة من كلية الدعوة والإرشاد</p>
+            </div>
+            <div class="team-card">
+                <h3>الأستاذ نزار السمرة ابو انس</h3>
+                <p>مسؤول المشاريع</p>
+            </div>
+            <div class="team-card">
+                <h3>الأستاذ وفيق نصرالله ابو عمر</h3>
+                <p>مسؤول المشاريع والتطوير</p>
+            </div>
         </div>
     </section>
 
     <!-- قسم الاتصال -->
     <section class="section" id="contact">
         <h2 class="section-title">اتصل بنا</h2>
+        <p>
+            للتواصل مع فريق المبادرة أو لطرح أي استفسارات، يمكنك استخدام النموذج أدناه أو التواصل معنا عبر الواتساب.
+        </p>
         <div class="contact-container">
-            <div class="whatsapp-groups" id="whatsapp-groups-root">
-                <!-- روابط مجموعات الواتساب -->
-            </div>
             <form class="contact-form" id="contactForm">
                 <div class="form-group">
                     <label for="name">الاسم</label>
@@ -157,14 +266,14 @@
     <!-- المودال -->
     <div class="modal" id="donateModal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal" onclick="closeModal('donateModal')">&times;</span>
             <div id="donateContent"></div>
         </div>
     </div>
 
     <div class="modal" id="goalModal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal" onclick="closeModal('goalModal')">&times;</span>
             <div id="goalContent"></div>
         </div>
     </div>
@@ -190,11 +299,14 @@
                     <a href="#" class="social-link" target="_blank">
                         <i class="fab fa-whatsapp"></i>
                     </a>
+                    <a href="#" class="social-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>جميع الحقوق محفوظة © 2025 - مبادرة بداية محبة وخير</p>
+            <p> © 2025 - مبادرة بداية محبة وخير</p>
         </div>
     </footer>
 
