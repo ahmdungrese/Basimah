@@ -16,9 +16,9 @@ const initiativeData = {
             coordinator: 'محمد احسان دالاتي',
             phone: '‪+49 176 72742271‬',
             whatsapp: '‪+49 176 72742271‬',
-            iban: 'DE05',
+            iban: 'DE05 000',
             paypal: 'Mohamadmalekdalati@gmail.com',
-            groupLink: 'https://chat.whatsapp.com/germanygroup',
+            groupLink: 'https://chat.whatsapp.com/BAYkTdVdAOPGPE5I36LBX3',
             contactPerson: {
                 name: 'أحمد تحسين نصرالله',
                 phone: '+49 1525 4165330'
@@ -30,7 +30,7 @@ const initiativeData = {
             coordinator: 'طارق انور الشعيري',
             phone: '+43 681 20522580',
             whatsapp: '+43 681 20522580',
-            groupLink: 'https://chat.whatsapp.com/austriagroup'
+            groupLink: 'https://chat.whatsapp.com/BAYkTdVdAOPGPE5I36LBX3'
         },
         belgium: {
             name: 'بلجيكا',
@@ -38,7 +38,7 @@ const initiativeData = {
             coordinator: 'ماجد محمد دالاتي',
             phone: '+32 465 64 76 30',
             whatsapp: '+32 465 64 76 30',
-            groupLink: 'https://chat.whatsapp.com/belgiumgroup'
+            groupLink: 'https://chat.whatsapp.com/BAYkTdVdAOPGPE5I36LBX3'
         }
     },
 
@@ -48,42 +48,42 @@ const initiativeData = {
             title: "خطيب مسجد عين الخضراء",
             role: "عضو الفريق الإداري",
             description: "أستاذ في الشريعة من كلية الدعوة والإرشاد",
-            facebook: "https://facebook.com/profile1"
+            facebook: "https://www.facebook.com/profile.php?id=100004099421683"
         },
         {
             name: "الأستاذ ايمن شعيري أبو طريف",
             title: "مدير الجمعية الخيرية",
             role: "مسؤول إدارة وتنسيق الأعمال",
             description: "خبرة طويلة في العمل الخيري",
-            facebook: "https://facebook.com/profile2"
+            facebook: "https://www.facebook.com/profile.php?id=100026230099984"
         },
         {
             name: "الأستاذ بشير نصر الله أبو منذر",
             title: "مؤسس الجمعية الخيرية",
             role: "رئيس مجلس الإدارة",
             description: "خريج كلية الحقوق",
-            facebook: "https://facebook.com/profile3"
+            facebook: "https://www.facebook.com/profile.php?id=100028583169906"
         },
         {
             name: "الأستاذ سالم نصر الله",
             title: "عضو الفريق الإداري",
             role: "مسؤول التنسيق والمتابعة",
             description: "خريج جامعة دمشق - كلية التربية",
-            facebook: "https://facebook.com/profile4"
+            facebook: "https://www.facebook.com/profile.php?id=100044893625281"
         },
         {
             name: "الأستاذ نزار السمرة أبو أنس",
             title: "عضو الفريق الإداري",
             role: "مسؤول التنسيق والمتابعة",
             description: "مسؤول المشاريع",
-            facebook: "https://facebook.com/profile5"
+            facebook: "https://chat.whatsapp.com/BAYkTdVdAOPGPE5I36LBX3"
         },
         {
             name: "الأستاذ وفيق نصر الله أبو عمر",
             title: "عضو الفريق الإداري",
             role: "مسؤول المشاريع والتطوير",
             description: "مسؤول تطوير المشاريع",
-            facebook: "https://facebook.com/profile6"
+            facebook: "https://chat.whatsapp.com/BAYkTdVdAOPGPE5I36LBX3"
         }
     ]
 };
@@ -218,8 +218,7 @@ function setupGoalsSection() {
         <div class="goal-card" data-goal="${goal.id}">
             <h3>${goal.title}</h3>
             <p>${goal.details}</p>
-            <button onclick="showGoalDetails('${goal.id}')" class="details
-                        <button onclick="showGoalDetails('${goal.id}')" class="details-btn">
+            <button onclick="showGoalDetails('${goal.id}')" class="details-btn">
                 عرض التفاصيل
             </button>
         </div>
@@ -371,74 +370,3 @@ function setupTeamSection() {
 
     teamContainer.innerHTML = teamHTML;
 }
-
-// تهيئة قسم التبرع
-function setupDonationSection() {
-    const donateContainer = document.getElementById('donate-grid');
-    if (!donateContainer) return;
-
-    const donateHTML = `
-        <div class="donate-cards">
-            <div class="donate-card germany">
-                <h3>ألمانيا 🇩🇪</h3>
-                <p class="coordinator">المنسق: محمد احسان دالاتي</p>
-                <p class="contact">رقم التواصل: ‪+49 176 72742271‬</p>
-                <div class="donate-actions">
-                    <button class="btn-whatsapp" onclick="openWhatsApp('491767274227')">
-                        <i class="fab fa-whatsapp"></i>
-                        تواصل عبر الواتساب
-                    </button>
-                    <button class="btn-primary" onclick="showDonationDetails('germany')">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        معلومات التبرع
-                    </button>
-                </div>
-            </div>
-
-            <div class="donate-card austria">
-                <h3>النمسا 🇦🇹</h3>
-                <p class="coordinator">المنسق: طارق انور الشعيري</p>
-                <p class="contact">رقم التواصل: +43 681 20522580</p>
-                <div class="donate-actions">
-                    <button class="btn-whatsapp" onclick="openWhatsApp('436812052258')">
-                        <i class="fab fa-whatsapp"></i>
-                        تواصل عبر الواتساب
-                    </button>
-                    <button class="btn-primary" onclick="showDonationDetails('austria')">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        معلومات التبرع
-                    </button>
-                </div>
-            </div>
-
-            <div class="donate-card belgium">
-                <h3>بلجيكا 🇧🇪</h3>
-                <p class="coordinator">المنسق: ماجد محمد دالاتي</p>
-                <p class="contact">رقم التواصل: +32 465 64 76 30</p>
-                <div class="donate-actions">
-                    <button class="btn-whatsapp" onclick="openWhatsApp('32465647630')">
-                        <i class="fab fa-whatsapp"></i>
-                        تواصل عبر الواتساب
-                    </button>
-                    <button class="btn-primary" onclick="showDonationDetails('belgium')">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        معلومات التبرع
-                    </button>
-                </div>
-            </div>
-        </div>
-    `;
-
-    donateContainer.innerHTML = donateHTML;
-}
-
-//* تهيئة قسم النشرات
-
-
-// إضافة استدعاء الدوال في تهيئة التطبيق
-document.addEventListener('DOMContentLoaded', () => {
-    initializeApp();
-    setupTeamSection();
-    setupDonationSection();
-    setupFlyersSection();
-});
